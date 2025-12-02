@@ -2,10 +2,10 @@
     <div class="p-3 rounded-lg bg-white mb-6  ">
         <h6 class="font-medium text-sm uppercase pb-4 ">{{ title }}</h6>
         <div>
-            <input type="text" :placeholder="`Search ${title}`" v-model="searchFilterQuery"
+            <input type="text" :placeholder="`Search ${title}`" v-model="serachQuery"
                 class="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-green-600" />
             <ul class="mt-2 space-y-2 h-48  overflow-y-auto pr-2">
-                <li v-for="item in searchedFilters" :key="item.name" class="flex items-center justify-between text-gray-600 font-semibold">
+                <li v-for="item in filterdata" :key="item.name" class="flex items-center justify-between text-gray-600 font-semibold">
                     <div class="flex items-center justify-start">
                         <input type="checkbox"
                             v-model="selectedFilter"
@@ -26,7 +26,8 @@ import { ref, computed } from 'vue';
 import { useShop } from '../store/shop';
 
 const shop = useShop();
-
+const serachQuery = defineModel('serachQuery')
+const selectedFilter = defineModel('selectedFilter')
 const {filterdata} = defineProps({
     filterdata: {
         type: Array,
@@ -39,19 +40,11 @@ const {filterdata} = defineProps({
     }
 });
 
-const searchFilterQuery = ref("");
-const selectedFilter= ref([]);
 
-const searchedFilters = computed(() => {
-  return filterdata.filter((cat) => {
-    return cat.name.toLowerCase().match(searchFilterQuery.value.toLowerCase());
-  });
-});
 
 const getProducts = () => {
-    // console.log("Selected Filters:", shop.products1);
     shop.filterProductsByKeywords(selectedFilter.value);
-    console.log("Filtered Products:", shop.products1);
+    
 };
 
 
