@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+public/images/products/*
 src/assets/products.js
 
 # Editor directories and files
