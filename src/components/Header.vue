@@ -77,7 +77,7 @@ const navItems = [
     { id: 3, name: 'Categories', link: '/shop' },
     { id: 4, name: 'Offers', link: '/shop' },
     { id: 5, name: 'About', link: '/' },
-    { id: 6, name: 'Contact', link: '/shop' }
+    { id: 6, name: 'Find Us', link: '/shop' }
 
 ];
 
