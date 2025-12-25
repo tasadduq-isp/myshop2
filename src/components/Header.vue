@@ -46,7 +46,7 @@
         <!-- Navbar Links -->
         <nav >
             <div class="max-w-7xl mx-auto ">
-                <ul class="hidden md:flex justify-center py-3 flex-wrap gap-x-6 text-sm font-bold text-gray-700">
+                <ul class="hidden md:flex justify-center py-3 flex-wrap gap-x-6 text-sm font-bold bg-amber-100 text-gray-700">
                     <li v-for="item in navItems" :key="item.id" >
                         <RouterLink :to="item.link" class="hover:text-green-600 transition-colors p-2 ">{{ item.name }}</RouterLink>
                     </li>

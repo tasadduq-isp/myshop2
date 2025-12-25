@@ -658,3 +658,37 @@ export const products = [
     ]
   }
 ];
+
+// const uniqueKeywords = [
+//   ...new Set(products.flatMap(item => item.keywords))
+// ];
+
+// console.log(uniqueKeywords);
+
+function jsonToPhpArray(jsonData) {
+    const convertValue = (value) => {
+        if (Array.isArray(value)) {
+            return "[\n" + value.map(v => "        " + convertValue(v)).join(",\n") + "\n    ]";
+        }
+        if (typeof value === "object" && value !== null) {
+            return "[\n" +
+                Object.entries(value)
+                    .map(([k, v]) => `        "${k}" => ${convertValue(v)}`)
+                    .join(",\n") +
+                "\n    ]";
+        }
+        if (typeof value === "string") {
+            return `"${value}"`;
+        }
+        return value; // numbers, booleans
+    };
+
+    return "<?php\n\nreturn [\n" +
+        jsonData.map(item =>
+            "    " + convertValue(item)
+        ).join(",\n") +
+        "\n];";
+}
+
+const phpArrayString = jsonToPhpArray(products);
+console.log(phpArrayString);

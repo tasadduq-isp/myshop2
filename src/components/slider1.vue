@@ -90,7 +90,7 @@ watch([minVal, maxVal], ([newMin, newMax]) => {
   margin-top: -14px;
   background: #fff;
   border: solid 1px rgb(11, 65, 4);
-  cursor: grab;
+  cursor: pointer;
   pointer-events: all;
   /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.4); */
   z-index: 10;
