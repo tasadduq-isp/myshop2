@@ -30,11 +30,11 @@
                             <span
                                 class="absolute -top-1 -right-1 bg-green-700 text-white text-xs font-semibold rounded-full h-5 w-5 flex items-center justify-center">3</span>
                         </button>
-                        <button class="relative p-2 text-gray-700 hover:text-lime-600">
+                        <RouterLink to="/cart" class="relative p-2 text-gray-700 hover:text-lime-600">
                             <shopping-cart-icon class="h-5 w-5" />
-                            <span
-                                class="absolute -top-1 -right-1 bg-green-700 text-white text-xs font-semibold rounded-full h-5 w-5 flex items-center justify-center">2</span>
-                        </button>
+                            <span v-if="shop.cartCount > 0"
+                                class="absolute -top-1 -right-1 bg-green-700 text-white text-xs font-semibold rounded-full h-5 w-5 flex items-center justify-center">{{ shop.cartCount }}</span>
+                        </RouterLink>
                         <button class="relative p-2 text-gray-700 hover:text-lime-600">
                             <UserIcon class="h-5 w-5" />
                         </button>
@@ -80,6 +80,9 @@ const navItems = [
     { id: 6, name: 'Find Us', link: '/shop' }
 
 ];
+
+import { useShop } from '../store/shop';
+const shop = useShop();
 
 const handleScroll = () => {
     isScrolled.value = window.scrollY > 10;

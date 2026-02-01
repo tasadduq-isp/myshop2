@@ -11,11 +11,17 @@
             <p>{{ props.product.rating.count }}</p>
         </div>
         <p class="font-bold text-gray-500 mb-2">Price: Rs. {{ props.product.priceCents / 100 }}</p>
-        <button class="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-900 mb-4">Add to Cart</button>
+        <div class="flex items-center gap-2">
+            <button @click.prevent="handleAddToCart" class="bg-green-700 text-white font-bold py-2 px-4 rounded hover:bg-green-900 mb-4">Add to Cart</button>
+            <RouterLink :to="`/product/${props.product.id}`" class="text-sm text-gray-700 hover:underline">View</RouterLink>
+        </div>
     </div>
 </template>
 
 <script setup>
+import { useShop } from '../store/shop';
+const shop = useShop();
+
 const props = defineProps({
     product: {
         type: Object,
@@ -24,4 +30,8 @@ const props = defineProps({
 });
 // import { products } from '../assets/products';
 import { HeartIcon } from '@heroicons/vue/24/outline';
+
+const handleAddToCart = () => {
+  shop.addToCart(props.product, 1);
+};
 </script>

@@ -43,7 +43,7 @@ const {filterdata} = defineProps({
 
 
 const getProducts = () => {
-    shop.filterProductsByKeywords(selectedFilter.value);
+    // shop.filterProductsByKeywords(selectedFilter.value);
     
 };
 

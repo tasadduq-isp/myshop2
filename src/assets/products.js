@@ -43,6 +43,13 @@ export const products = [
       "mens"
     ],
     type: "clothing",
+    colors: ["Teal", "Black", "Red"],
+    variantImages: {
+      "Teal": "images/products/variations/adults-plain-cotton-tshirt-2-pack-teal.jpg",
+      "Black": "images/products/variations/adults-plain-cotton-tshirt-2-pack-black.jpg",
+      "Red": "images/products/variations/adults-plain-cotton-tshirt-2-pack-red.jpg"
+    },
+    sizeOptions: ["S", "M", "L", "XL"],
     sizeChartLink: "images/clothing-size-chart.png"
   },
   {
@@ -102,7 +109,14 @@ export const products = [
       "hoodies",
       "sweaters",
       "apparel"
-    ]
+    ],
+    type: "clothing",
+    colors: ["Yellow", "Teal"],
+    variantImages: {
+      "Yellow": "images/products/variations/plain-hooded-fleece-sweatshirt-yellow.jpg",
+      "Teal": "images/products/variations/plain-hooded-fleece-sweatshirt-teal.jpg"
+    },
+    sizeOptions: ["S", "M", "L", "XL", "XXL"]
   },
   {
     id: "77919bbe-0e56-475b-adde-4f24dfed3a04",
@@ -167,6 +181,11 @@ export const products = [
       "apparel"
     ],
     type: "clothing",
+    colors: ["Black"],
+    variantImages: {
+      "Black": "images/products/women-chiffon-beachwear-coverup-black.jpg"
+    },
+    sizeOptions: ["S", "M", "L"],
     sizeChartLink: "images/clothing-size-chart.png"
   },
   {
@@ -310,6 +329,13 @@ export const products = [
       "apparel"
     ],
     type: "clothing",
+    colors: ["Black", "Blue", "Gray"],
+    variantImages: {
+      "Black": "images/products/variations/women-stretch-popover-hoodie-black.jpg",
+      "Blue": "images/products/variations/women-stretch-popover-hoodie-blue.jpg",
+      "Gray": "images/products/variations/women-stretch-popover-hoodie-gray.jpg"
+    },
+    sizeOptions: ["XS", "S", "M", "L"],
     sizeChartLink: "images/clothing-size-chart.png"
   },
   {
@@ -359,6 +385,13 @@ export const products = [
       "mens"
     ],
     type: "clothing",
+    colors: ["Blue", "Black", "Red"],
+    variantImages: {
+      "Blue": "images/products/variations/men-golf-polo-t-shirt-blue.jpg",
+      "Black": "images/products/variations/men-golf-polo-t-shirt-black.jpg",
+      "Red": "images/products/variations/men-golf-polo-t-shirt-red.jpg"
+    },
+    sizeOptions: ["S", "M", "L", "XL", "XXL"],
     sizeChartLink: "images/clothing-size-chart.png"
   },
   {
